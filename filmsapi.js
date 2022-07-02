@@ -4,13 +4,23 @@ const router = express.Router();
 //here i have imported 
 //here i have created an array of films to return
 
-const films = [
+// const films = [
+//   "King Richard",
+//   "Seven Pounds",
+//   "Muhammed",
+//   "I, Robot",
+//   "Fresh Prince of Bel Air",
+// ];
+
+const users = [
   "King Richard",
-  "Seven Pounds",
-  "Muhammed",
-  "I, Robot",
-  "Fresh Prince of Bel Air",
+  "Mae Jemison",
+  "Muhammed Ali",
+  " Nerfetiti",
+  "The Fresh Prince of Bel Air",
 ];
+
+
 
 // here is a command ln 7 / to show/ pass the array of devices or error msg-works
 router.get("/", async (req, res) => {
@@ -18,22 +28,23 @@ router.get("/", async (req, res) => {
     //we added /home to distinguish from the other endpoints
   console.log('/home')
   try {
-    res.json(films);
+    res.json(users);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
 // Retrieve a device that exists
-router.get("/films/:name", (req, res) => {
+// router.get("/films/:name", (req, res) => {
+router.get("/users/:name", (req, res) => {
    //we added /films/:name to distinguish from the api-docs endpoints
-  const filmsExists = films.includes(req.params.name);
+  const usersExists = users.includes(req.params.name);
   //key value pairs : (this is a key)
-  if (filmsExists) {
+  if (usersExists) {
     res.json(`${req.params.name} exists!`);
   } else {
     res.json(
-      `${req.params.name} sorry this film does not exist in your service/api :(`
+      `${req.params.name} sorry this user does not exist in your film service :(`
     );
   }
 });

@@ -1,0 +1,40 @@
+{ 
+	"filmsData": [
+	{ "filmid":1,
+		"name": "King Richard",
+	"rating": 5 ,
+	"review": "A great oscar-winning role for Smith. "
+	},
+
+	{ "filmid":2,
+		"name": "I, Robot",
+	"rating": 4 ,
+	"review": "An erie, sci-fi movie with thrills and spills, be careful what you wish for "
+	},
+
+	{ "filmid":3,
+		"name": "Muhammed",
+	"rating": 5 ,
+	"review": "Smith get the Oscar nod for his superlative performance. "
+	},
+
+	{ "filmid":4,
+		"name": "King Richard",
+	"rating": 5 ,
+	"review": "A great oscar-winning role for Smith. "
+	},
+
+	{ "filmid":5,
+		"name": "Bad Boys",
+	"rating": 5 ,
+	"review": "Superlative buddy cop pairing . This is pure joy "
+	},
+
+	{ "filmid":6,
+		"name": "I am Legend",
+	"rating": 4.5 ,
+	"review": "A great oscar-winning role for Smith. "
+	}
+]
+}
+	
