@@ -20,22 +20,8 @@
   "schemes": ["http"],
   "consumes": ["application/json"],
   "produces": ["application/json"],
-  "paths": {
-    "/users": {
-      "get": {
-        "tags": ["Users"],
-        "summary": "Get all FilmFlix users in system",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Users"
-            }
-          }
-        }
-      }
-    }
-  },
+
+
   "definitions": {
     "User": {
       "required": ["name", "_id"],
@@ -77,15 +63,30 @@
       "$ref": "#/definitions/User"
     }
   },
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "This /User endpoint in FilmFlix will retrieve all the users in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/users"
+            }
+          }
+        }
+      }
+    },
 "/addUser": {
   "post": {
     "tags": ["Users"],
-    "description": "Create new user in system",
+    "description": "This method creates a new user in system",
     "parameters": [
       {
         "name": "user",
         "in": "body",
-        "description": "User that we want to create",
+        "description": "New user that we want to add to the body of the json",
         "schema": {
           "$ref": "#/definitions/User"
         }
@@ -101,6 +102,53 @@
             }
           }
        }
+    },
+"/user/{id}":{
+"parameters": [
+{
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "id of user that we want to find",
+        "type":"integer"
+        }
+      ],
+  "delete": {
+    "summary": "Delete user with given ID",
+    "tags": ["Users"],
+    "responses": {
+      "200": {
+        "description": "User is deleted",
+        "schema": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    }
+  },
+    "patch": {
+      "summary": "Update user with give ID",
+      "tags": ["Users"],
+      "parameters": [
+        {
+          "name": "user",
+          "in": "body",
+          "description": "User with new values of properties",
+          "schema": {
+            "$ref": "#/definitions/updateUser"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "User is updated",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      }
     }
   }
 
+  
+  }
+}

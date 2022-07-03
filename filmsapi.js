@@ -36,18 +36,18 @@ router.get("/home", async (req, res) => {
 
 // Retrieve a device that exists
 // router.get("/films/:name", (req, res) => {
-// router.get("/users/:name", (req, res) => {
-//    //we added /films/:name to distinguish from the api-docs endpoints
-//   const usersExists = users.includes(req.params.name);
-//   //key value pairs : (this is a key)
-//   if (usersExists) {
-//     res.json(`${req.params.name} exists!`);
-//   } else {
-//     res.json(
-//       `${req.params.name} sorry this user does not exist in your film service :(`
-//     );
-//   }
-// });
+router.get("/users/:name", (req, res) => {
+   //we added /films/:name to distinguish from the api-docs endpoints
+  const usersExists = users.includes(req.params.name);
+  //key value pairs : (this is a key)
+  if (usersExists) {
+    res.json(`${req.params.name} exists!`);
+  } else {
+    res.json(
+      `${req.params.name} sorry this user does not exist in your film service :(`
+    );
+  }
+});
 //eg a server makes a request to my server to add a new device
 // router.post("/", async (req, res) => {
 //   console.log(req);
