@@ -21,7 +21,22 @@
   "consumes": ["application/json"],
   "produces": ["application/json"],
 
-
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get all users in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    }
+  },
   "definitions": {
     "User": {
       "required": ["name", "_id"],
@@ -58,26 +73,7 @@
         }
       }
     },
-    "Users": {
-      "type": "array",
-      "$ref": "#/definitions/User"
-    }
-  },
-  "paths": {
-    "/users": {
-      "get": {
-        "tags": ["Users"],
-        "summary": "This /User endpoint in FilmFlix will retrieve all the users in system",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/users"
-            }
-          }
-        }
-      }
-    },
+   
 "/addUser": {
   "post": {
     "tags": ["Users"],
@@ -113,6 +109,7 @@
         "type":"integer"
         }
       ],
+      
   "delete": {
     "summary": "Delete user with given ID",
     "tags": ["Users"],

@@ -12,13 +12,13 @@ const router = express.Router();
 //   "Fresh Prince of Bel Air",
 // ];
 
-const users = [
-  "King Richard",
-  "Mae Jemison",
-  "Muhammed Ali",
-  " Nerfetiti",
-  "The Fresh Prince of Bel Air",
-];
+// const users = [
+//   "King Richard",
+//   "Mae Jemison",
+//   "Muhammed Ali",
+//   " Nerfetiti",
+//   "The Fresh Prince of Bel Air",
+// ];
 
 
 
