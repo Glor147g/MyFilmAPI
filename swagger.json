@@ -73,7 +73,11 @@
         }
       }
     },
-   
+
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+    },
 "/addUser": {
   "post": {
     "tags": ["Users"],
