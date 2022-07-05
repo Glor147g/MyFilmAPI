@@ -1,6 +1,9 @@
 //here i have imported express and the router
 const express = require("express");
 const router = express.Router();
+
+//import the contents of the json file
+const filmsData = require("./filmsData.json")
 //here i have imported 
 //here i have created an array of films to return
 
@@ -49,11 +52,11 @@ router.get("/users/:name", (req, res) => {
   }
 });
 //eg a server makes a request to my server to add a new device
-// router.post("/", async (req, res) => {
-//   console.log(req);
-//   devices.push(req.body.name);
-//   res.json(`${req.body.name} has been added!`);
-// });
+router.post("/User", async (req, res) => {
+  console.log(req);
+  // filmsData.push(req.body.name);
+  res.json(`${req.body.name} has been added!`);
+});
 
 //edit a request, creates a record in the database
 // router.put("/", async (req, res) => {

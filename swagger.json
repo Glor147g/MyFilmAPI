@@ -126,47 +126,24 @@
   },
   "definitions": {
     "User": {
-      "required": [
-        "name",
-        "_id",
-        "companies"
-      ],
+      
       "properties": {
-        "_id": {
+        "filmid": {
           "type": "integer",
           "uniqueItems": true
-        },
-        "isPublic": {
-          "type": "boolean"
         },
         "name": {
           "type": "string"
         },
-        "books": {
-          "type": "array",
-          "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "amount": {
-                  "type": "number"
-                }
-              }
-          }
-              
+        "rating": {
+          "type": "integer"
         },
-        "companies": {
-          "type": "array",
-          "items": {
-              "type": "string"      
-          }
-              
-        }
-       
+        "reviews": {
+          "type": "string"
+        }           
       }
-    },
+    }
+  },
     "updateUser": {
       "required": [
         "name",
@@ -210,5 +187,5 @@
     }
    
   }
-}
+
 

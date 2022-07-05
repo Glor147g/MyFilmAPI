@@ -9,35 +9,37 @@ const swaggerDocument = require('./swagger.json')
 //my app file, were importing it
 const app = express()
 // const api = require('./filmsapi')
-
+const filmsData  = require('./filmsData.json')
 //define our app
 app.get('/users', (req,res) => {
-	res.send ([
-		{
-			id:1,
-			title: "King Richard",
-		},
-		{
+	res.send(filmsData)
+})
+	
+	// {
+		// 	id:1,
+		// 	title: "King Richard",
+		// },
+		// {
 
-			id:2,
-			title: "Mae Jemison",
-		},
-		{
-			id:3,
-			title:"Muhammed Ali",
-		},
-		{
-			id:4,
-			title:" Nerfetiti",
-		},
-		{
-			id:5,
-			title:"The Fresh Prince of Bel Air"
-		}
-		  ])
+		// 	id:2,
+		// 	title: "Mae Jemison",
+		// },
+		// {
+		// 	id:3,
+		// 	title:"Muhammed Ali",
+		// },
+		// {
+		// 	id:4,
+		// 	title:" Nerfetiti",
+		// },
+		// {
+		// 	id:5,
+		// 	title:"The Fresh Prince of Bel Air"
+		// }
+		//   ])
 
 
-		  });
+		//   });
 
 // app.use(express.json())
 //handle json responses
@@ -54,7 +56,6 @@ app.get('/users', (req,res) => {
 
 
 //swagger ui
-
 app.use('/swagger-api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // app.use('/swagger', swaggerUi.serve, swaggerUi.setup(apiSpec));
 
